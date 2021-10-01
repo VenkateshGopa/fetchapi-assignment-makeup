@@ -24,6 +24,9 @@ function set() {
     else innerdivs[i].style.display = "none";
   }
 }
+function changeimg(data){
+  data.src="imgnotfound.jpg";
+}
 function getData(data) {
   console.log(data);
   const row = document.getElementById("row");
@@ -32,6 +35,7 @@ function getData(data) {
     div.className = "col-4 col-sm-3 col-lg-2";
     const img = document.createElement("img");
     img.src = element.image_link;
+    img.setAttribute("onerror","changeimg(this)");
     div.appendChild(img);
     const name = document.createElement("p");
     name.id="brand";
